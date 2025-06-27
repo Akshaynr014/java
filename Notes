@@ -1,0 +1,10 @@
+ Useful FileHandling Methods
+
+createNewFile()	Creates a new file
+exists()	Checks if the file exists
+getName()	Returns the name of the file
+getAbsolutePath()	Returns absolute path of the file
+canRead()	Checks if file is readable
+canWrite()	Checks if file is writable
+length()	Returns file size in bytes
+delete()	Deletes the file
