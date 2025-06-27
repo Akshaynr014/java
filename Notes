@@ -8,3 +8,87 @@ canRead()	Checks if file is readable
 canWrite()	Checks if file is writable
 length()	Returns file size in bytes
 delete()	Deletes the file
+
+
+ Java Collections Framework – Notes 
+
+🔹 1. What is the Java Collections Framework (JCF)?
+The Java Collections Framework is a unified architecture for storing and manipulating groups of objects. It includes:
+
+Interfaces
+
+Classes
+
+Algorithms
+
+👉 Collections help in handling data structures like lists, sets, queues, and maps.
+
+🔹 2. Key Interfaces in Collections
+Interface	Description
+Collection	Root interface for all collections
+List	Ordered collection (can have duplicates)
+Set	Unordered collection (no duplicates)
+Queue	Ordered for processing elements (FIFO)
+Map	Key-value pairs (no duplicate keys)
+
+🔹 3. List Interface
+Definition: An ordered collection that allows duplicate elements.
+
+Explanation: Maintains insertion order. You can access elements using an index.
+
+🔹 4. Set Interface
+Definition: A collection that does not allow duplicate elements.
+
+Explanation: It models the mathematical set abstraction.
+
+🔹 5. Queue Interface
+Definition: A collection used to hold multiple elements prior to processing.
+
+Explanation: Usually follows FIFO (First In, First Out) order.
+
+🔹 6. Map Interface
+Definition: An object that maps keys to values.
+
+Explanation: Each key is unique, but values can be duplicated. Not a true Collection.
+
+🔹 7. Common Implementations
+Interface	Class	Description
+List	ArrayList	Resizable array, fast access
+LinkedList	Doubly linked list, faster insert/delete
+Set	HashSet	Unordered set, allows null, no duplicates
+LinkedHashSet	Maintains insertion order
+TreeSet	Sorted set, no nulls
+Queue	PriorityQueue	Orders elements using comparator
+Map	HashMap	Unordered key-value pairs
+LinkedHashMap	Maintains insertion order
+TreeMap	Sorted key-value pairs
+
+🔹 8. Iterator Interface
+Definition: Used to traverse elements in a collection.
+
+Explanation: Provides methods like hasNext() and next().
+
+🔹 9. Comparable vs Comparator
+Concept	Definition
+Comparable	Natural ordering, defines compareTo() inside class
+Comparator	Custom sorting logic, defines compare() externally
+
+🔹 10. Differences Between List, Set, and Map
+Feature	List	Set	Map
+Duplicates	Allowed	Not allowed	Keys: No, Values: Yes
+Order	Maintains	Not guaranteed	Keys sorted (TreeMap)
+Index Access	Yes	No	No
+
+🔹 11. Collections vs Collection
+Collection: Interface (List, Set, Queue)
+
+Collections: Utility class with static methods (like sort(), reverse())
+
+🔹 12. Benefits of Collections Framework
+Reduces programming effort
+
+Increases performance and reusability
+
+Provides consistent API
+
+Supports various data structures
