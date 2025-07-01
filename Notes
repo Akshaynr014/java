@@ -109,3 +109,60 @@ Increases performance and reusability
 Provides consistent API
 
 Supports various data structures
+
+ Types of Cursors in Java
+
+1. Enumeration Cursor
+Introduced in: Java 1.0
+
+Used with: Legacy classes like Vector, Stack, Hashtable
+
+Methods:
+
+hasMoreElements()
+
+nextElement()
+
+Traversal Direction: Forward only
+
+Modification Allowed: ❌ No (read-only)
+
+Special Note: Can't be used to add or remove elements
+
+2. Iterator Cursor
+Introduced in: Java 1.2
+
+Used with: All collection classes (List, Set, Queue, etc.)
+
+Methods:
+
+hasNext()
+
+next()
+
+remove() – ✅ Safe removal during iteration
+
+Traversal Direction: Forward only
+
+Modification Allowed: ✅ Remove only
+
+Special Note: Universal cursor for collections
+
+3. ListIterator Cursor
+Introduced in: Java 1.2
+
+Used with: Only List implementations (ArrayList, LinkedList)
+
+Methods:
+
+All Iterator methods (hasNext(), next(), remove())
+
+Plus: hasPrevious(), previous(), add(), set()
+
+Traversal Direction: ✅ Forward and backward
+
+Modification Allowed: ✅ Add, remove, update
+
+Special Note: Most powerful cursor, but works only with Lists
+
+
