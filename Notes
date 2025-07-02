@@ -1,3 +1,144 @@
+Java Versions and Their Features
+🔹 Java 1.0 (1996)
+First official version
+
+Basic OOP concepts: Classes, Objects, Inheritance, etc.
+
+Applets introduced
+
+🔹 Java 1.2 (1998) – “Java 2”
+Swing GUI
+
+Collections Framework (List, Set, Map, etc.)
+
+JIT Compiler
+
+🔹 Java 1.5 (2004) – “Java 5”
+Generics
+
+Enhanced for loop (for-each)
+
+Autoboxing/unboxing
+
+Annotations
+
+Enums
+
+Varargs
+
+🔹 Java 1.6 (2006) – “Java 6”
+Improved Web Services support
+
+Compiler API
+
+Performance enhancements
+
+🔹 Java 1.7 (2011) – “Java 7”
+Try-with-resources
+
+Diamond Operator (<>)
+
+Multi-catch exception
+
+Strings in switch
+
+🔹 Java 1.8 (2014) – “Java 8”
+Lambda Expressions
+
+Stream API
+
+Functional Interfaces
+
+Default & Static methods in interfaces
+
+java.time API (new Date-Time API)
+
+Optional class
+
+🔹 Java 9 (2017)
+Modules (JPMS)
+
+jshell (REPL)
+
+Improved Stream API
+
+🔹 Java 10 (2018)
+Local-variable type inference (var)
+
+Performance improvements
+
+🔹 Java 11 (2018) – LTS
+HTTP Client API
+
+Run Java files without compiling
+
+Removed deprecated APIs
+
+🔹 Java 12 to 15 (2019–2020)
+Switch expressions (preview in 12, finalized in 14)
+
+Text blocks (multi-line strings)
+
+Helpful NullPointerException messages
+
+🔹 Java 16–17 (2021) – LTS
+Pattern Matching for instanceof
+
+Sealed Classes
+
+Records (data-only classes)
+
+🔹 Java 18–20 (2022–2023)
+Structured concurrency (preview)
+
+Switch enhancements
+
+Record patterns (preview)
+
+🔹 Java 21 (2023) – LTS
+Virtual threads (from Project Loom)
+
+Finalized pattern matching for switch
+
+Record patterns, sequenced collections
+
+🔹 Java 22 (2024)
+Latest preview features like unnamed variables and classes
+
+Improvements to pattern matching and threads
+
+Shortcuts of Ecipse:
+
+Ctrl + Shift + R – Open resource (any file)
+
+Ctrl + Shift + T – Open type (class/interface)
+
+F3 – Go to declaration
+
+Ctrl + O – Quick outline (methods in current class)
+
+Ctrl + E – Switch between open editors
+
+Alt + ← / → – Navigate backward/forward in history
+
+
+Ctrl + Space – Content assist / autocomplete
+
+Ctrl + Shift + F – Format code
+
+Alt + Shift + R – Rename variable/method/class
+
+Ctrl + D – Delete current line
+
+Ctrl + / – Toggle single-line comment
+
+Ctrl + Shift + / – Add block comment
+
+Ctrl + Shift + \ – Remove block comment
+
+
+
+
 oops Concept
  1. Class
 A class is a blueprint or template used to create objects. It defines properties (variables) and behaviors (methods) that the object will have.
@@ -164,5 +305,17 @@ Traversal Direction: ✅ Forward and backward
 Modification Allowed: ✅ Add, remove, update
 
 Special Note: Most powerful cursor, but works only with Lists
+
+
+Primitive vs Wrapper Class Table
+Primitive Type	Wrapper Class
+byte	Byte
+short	Short
+int	Integer
+long	Long
+float	Float
+double	Double
+char	Character
+boolean	Boolean
 
 
