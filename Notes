@@ -440,3 +440,99 @@ BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
 
 // Example 4: With return
 Function<String, Integer> strLength = str -> str.length();
+
+
+ Day 9--------------------------------------------------------------------------------------------
+🗓 Date: 3/7/2025
+
+🧠 Topic: Multitasking & Multithreading
+
+🔄 Multitasking
+1. Process-Based Multitasking
+Multiple programs run simultaneously.
+
+Example: OS running multiple applications like browser, music player, etc.
+
+2. Thread-Based Multitasking
+Multiple threads (independent parts) of the same program run simultaneously.
+
+More efficient than process-based multitasking.
+
+🧵 Multithreading in Java
+Multithreading allows multiple threads to run in parallel, sharing the same memory space.
+
+🔹 Two Ways to Create a Thread:
+By Extending the Thread Class
+
+class MyThread extends Thread {
+    public void run() {
+        // task code
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start(); // starts the thread
+    }
+}
+By Implementing the Runnable Interface
+
+
+class MyRunnable implements Runnable {
+    public void run() {
+        // task code
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
+⏱ Thread Scheduler
+Part of JVM that decides which thread to run next.
+
+Behavior may vary depending on OS and JVM.
+
+🛠 start() vs run() Method
+Method	Description
+start()	Registers the thread with the Thread Scheduler and calls run() internally.
+run()	Treated as a normal method if called directly (not as a thread). No new thread is created.
+
+⚠️ You cannot restart a thread once it has been started and completed.
+
+🎚 Thread Priorities
+Range: 1 to 10
+
+Thread.MIN_PRIORITY = 1
+
+Thread.NORM_PRIORITY = 5 (default)
+
+Thread.MAX_PRIORITY = 10
+
+🧵 Main Thread vs Child Thread
+The main thread is the entry point of the Java program.
+
+Additional threads created using Thread or Runnable are called child threads.
+
+🔁 Thread Life Cycle
+📌 States of a Thread:
+
+NEW --> RUNNABLE --> RUNNING --> TERMINATED
+          |            |            ^
+          v            v            |
+      BLOCKED    WAITING     TIMED_WAITING
+🔹 Description:
+State	Description
+NEW	Thread object is created, but not yet started.
+RUNNABLE	start() is called, thread is ready to run.
+RUNNING	CPU has selected the thread to run.
+BLOCKED	Thread is blocked, waiting to acquire a lock.
+WAITING	Thread waits indefinitely for another thread to perform a task.
+TIMED_WAITING	Thread waits for a specific period of time.
+TERMINATED	Thread completes execution or is stopped.
+
+
+
