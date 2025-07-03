@@ -1,0 +1,12 @@
+class MyRunnable implements Runnable {
+    public void run() {
+        // task code
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
