@@ -318,4 +318,125 @@ double	Double
 char	Character
 boolean	Boolean
 
+-----------------------------------------------2/7/2025---------------------------------------------
 
+ Map Interface (Java 1.2)
+Map is not a child of the Collection interface.
+
+It is a separate interface in the Java Collections Framework.
+
+Stores data in key-value pairs (each entry is a Map.Entry<K, V> object).
+
+Keys must be unique.
+
+Values can be duplicated.
+
+Only one null key is allowed (in HashMap), but multiple null values are allowed.
+
+Use .put(key, value) to add entries.
+
+All methods in the Map interface are abstract.
+
+Hashtable, HashMap, LinkedHashMap, TreeMap are major implementations.
+
+✅ How HashMap Works Internally
+Hashing the key:
+
+The key is passed through a hashing function (hashCode() method).
+
+Hashing converts the key to an integer hash.
+
+Calculate index:
+
+index = hashCode % arraySize
+
+Default arraySize in Java 8+ is 16 (can grow dynamically).
+
+The index points to a bucket (a slot in the internal array).
+
+Store entry in the bucket:
+
+If the bucket is empty, the entry is stored.
+
+If not, a collision is handled using a LinkedList or Balanced Tree.
+
+Hash collision:
+
+Occurs when two different keys have the same hash index.
+
+Java handles this using:
+
+Linked List (Java 7 and earlier)
+
+Balanced Tree / Red-Black Tree (Java 8+, when number of items > 8 in a bucket and array size ≥ 64)
+
+Retrieving (hashMap.get(key)):
+
+Hash the key → find index → search the bucket’s list/tree for the matching key → return value.
+
+✅ HashMap Constructors
+java
+Copy
+Edit
+HashMap();                              // default capacity 16
+HashMap(int initialCapacity);          // user-defined capacity
+HashMap(int initialCapacity, float loadFactor);  // capacity + threshold
+HashMap(Map<? extends K, ? extends V> m);         // copy from another map
+✅ LinkedHashMap
+Extends HashMap.
+
+Maintains insertion order using a doubly linked list internally.
+
+✅ SortedMap (Java 1.2)
+It is a child interface of Map.
+
+TreeMap is a concrete implementation.
+
+Maintains natural order (or custom using Comparator).
+
+✅ Entry Set Example Using Map
+java
+Copy
+Edit
+import java.util.*;
+
+public class EntrySetExample {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 10);
+        map.put("Banana", 20);
+        map.put("Mango", 15);
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " => " + entry.getValue());
+        }
+    }
+}
+✅ Lambda Expression in Java
+Introduced in Java 8, lambda expressions simplify code by reducing boilerplate.
+
+🔹 Syntax
+java
+Copy
+Edit
+(parameters) -> { body }
+🔹 Rules
+Can omit access modifiers, return type, and method name.
+
+For a single statement, {} and return are optional.
+
+🔹 Examples
+java
+Copy
+Edit
+// Example 1: No parameters
+Runnable r = () -> System.out.println("Running");
+
+// Example 2: Single parameter
+Consumer<String> c = str -> System.out.println(str);
+
+// Example 3: Multiple parameters
+BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+
+// Example 4: With return
+Function<String, Integer> strLength = str -> str.length();
