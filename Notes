@@ -534,5 +534,46 @@ WAITING	Thread waits indefinitely for another thread to perform a task.
 TIMED_WAITING	Thread waits for a specific period of time.
 TERMINATED	Thread completes execution or is stopped.
 
+Java Runnable Interface – Notes (Without Code)
+🔹 What is Runnable?
+Runnable is a functional interface in Java (from java.lang package).
 
+It is used to define a task that can be executed by a thread.
+
+It contains only one method: run().
+
+🔹 Why use Runnable?
+To create threads without extending the Thread class.
+
+Allows your class to extend another class (since Java supports only single inheritance).
+
+Helps to separate task logic from thread execution.
+
+🔹 How Runnable works:
+You define a task by implementing the Runnable interface.
+
+This task is then passed to a Thread object.
+
+The thread is started to execute the task in parallel.
+
+🔹 Key Benefits:
+Better flexibility than using Thread directly.
+
+Encourages code reuse and separation of concerns.
+
+Compatible with lambda expressions in Java 8 and above.
+
+🔹 Runnable vs Thread
+Feature	Runnable	Thread
+Inheritance	Implements interface	Extends Thread class
+Flexibility	More (can extend other classes)	Less (single inheritance)
+Use case	Defines task logic	Handles thread execution & task
+Reusability	Can reuse same Runnable object	Less reusable
+
+🔹 Notes:
+You must call the start() method on a Thread object to run a Runnable task.
+
+Directly calling run() does not start a new thread — it just runs in the current thread.
+
+Useful in applications where you want to run multiple tasks in parallel.
 
