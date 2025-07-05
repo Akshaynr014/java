@@ -1,0 +1,52 @@
+ Music Player App 
+✅ Purpose:
+A Java console application to manage songs — including:
+
+Add (Create)
+
+View All (List)
+
+Search by ID (Read)
+
+Update
+
+Delete
+
+📦 Main Components (Layers):
+Layer	Role
+Model	Defines the Song class (id, name, year)
+Repository	Stores songs in a List, handles actual data operations like add, delete, search
+Service	Contains business logic (e.g., validation), and talks to the repository
+Controller	Takes user input from the console and calls the appropriate service methods
+Main	Starts the application and calls the controller
+
+🔁 Flow of Application:
+scss
+Copy
+Edit
+User (Console)
+   ↓
+Controller (Input handling)
+   ↓
+Service (Business logic)
+   ↓
+Repository (Data storage)
+   ↓
+List of Songs (in memory)
+⚠️ Exception Handling:
+Custom exception: SongNotFoundException
+
+Thrown when trying to get/update/delete a song with an invalid ID
+
+Handled gracefully using try-catch
+
+🧠 Key Concepts Practiced:
+Java OOP (classes, objects)
+
+Layered Architecture
+
+Exception Handling
+
+Console-based input/output
+
+Data storage using Collections (ArrayList)
