@@ -1,0 +1,94 @@
+Mapping relation
+
+1.one-to-one Mapping
+
+CREATE DATABASE mapping_demo;
+USE mapping_demo;
+CREATE TABLE Person (
+    person_id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+CREATE TABLE Passport (
+    passport_id INT PRIMARY KEY,
+    passport_number VARCHAR(50),
+    person_id INT UNIQUE,
+    FOREIGN KEY (person_id) REFERENCES Person(person_id)
+);
+INSERT INTO Person (person_id, name) VALUES
+(1, 'Akshay'),
+(2, 'Rahul');
+
+INSERT INTO Passport (passport_id, passport_number, person_id) VALUES
+(101, 'IND123456', 1),
+(102, 'IND654321', 2);
+
+SELECT p.name, ps.passport_number
+FROM Person p
+JOIN Passport ps ON p.person_id = ps.person_id;
+---------------------------------------------------------------------------------------------------------------------------------------
+2.one-to-Many
+
+USE mapping_demo;
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(100)
+);
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(100),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+INSERT INTO Department (dept_id, dept_name) VALUES
+(1, 'IT'),
+(2, 'HR');
+
+INSERT INTO Employee (emp_id, emp_name, dept_id) VALUES
+(101, 'Akshay', 1),
+(102, 'Rahul', 1),
+(103, 'Priya', 2);
+
+SELECT e.emp_name, d.dept_name
+FROM Employee e
+JOIN Department d ON e.dept_id = d.dept_id;
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+3.Many-To-Many
+
+USE mapping_demo;
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(100)
+);
+CREATE TABLE Course (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100)
+);
+CREATE TABLE Student_Course (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES Student(student_id),
+    FOREIGN KEY (course_id) REFERENCES Course(course_id)
+);
+
+INSERT INTO Student (student_id, student_name) VALUES
+(1, 'Akshay'),
+(2, 'Rahul');
+
+INSERT INTO Course (course_id, course_name) VALUES
+(101, 'Java'),
+(102, 'SQL'),
+(103, 'Python');
+
+INSERT INTO Student_Course (student_id, course_id) VALUES
+(1, 101),  -- Akshay → Java
+(1, 102),  -- Akshay → SQL
+(2, 102),  -- Rahul → SQL
+(2, 103);  -- Rahul → Python
+
+SELECT s.student_name, c.course_name
+FROM Student s
+JOIN Student_Course sc ON s.student_id = sc.student_id
+JOIN Course c ON sc.course_id = c.course_id;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------

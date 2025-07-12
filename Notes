@@ -1,0 +1,844 @@
+Java Versions and Their Features
+🔹 Java 1.0 (1996)
+First official version
+
+Basic OOP concepts: Classes, Objects, Inheritance, etc.
+
+Applets introduced
+
+🔹 Java 1.2 (1998) – “Java 2”
+Swing GUI
+
+Collections Framework (List, Set, Map, etc.)
+
+JIT Compiler
+
+🔹 Java 1.5 (2004) – “Java 5”
+Generics
+
+Enhanced for loop (for-each)
+
+Autoboxing/unboxing
+
+Annotations
+
+Enums
+
+Varargs
+
+🔹 Java 1.6 (2006) – “Java 6”
+Improved Web Services support
+
+Compiler API
+
+Performance enhancements
+
+🔹 Java 1.7 (2011) – “Java 7”
+Try-with-resources
+
+Diamond Operator (<>)
+
+Multi-catch exception
+
+Strings in switch
+
+🔹 Java 1.8 (2014) – “Java 8”
+Lambda Expressions
+
+Stream API
+
+Functional Interfaces
+
+Default & Static methods in interfaces
+
+java.time API (new Date-Time API)
+
+Optional class
+
+🔹 Java 9 (2017)
+Modules (JPMS)
+
+jshell (REPL)
+
+Improved Stream API
+
+🔹 Java 10 (2018)
+Local-variable type inference (var)
+
+Performance improvements
+
+🔹 Java 11 (2018) – LTS
+HTTP Client API
+
+Run Java files without compiling
+
+Removed deprecated APIs
+
+🔹 Java 12 to 15 (2019–2020)
+Switch expressions (preview in 12, finalized in 14)
+
+Text blocks (multi-line strings)
+
+Helpful NullPointerException messages
+
+🔹 Java 16–17 (2021) – LTS
+Pattern Matching for instanceof
+
+Sealed Classes
+
+Records (data-only classes)
+
+🔹 Java 18–20 (2022–2023)
+Structured concurrency (preview)
+
+Switch enhancements
+
+Record patterns (preview)
+
+🔹 Java 21 (2023) – LTS
+Virtual threads (from Project Loom)
+
+Finalized pattern matching for switch
+
+Record patterns, sequenced collections
+
+🔹 Java 22 (2024)
+Latest preview features like unnamed variables and classes
+
+Improvements to pattern matching and threads
+
+Shortcuts of Ecipse:
+
+Ctrl + Shift + R – Open resource (any file)
+
+Ctrl + Shift + T – Open type (class/interface)
+
+F3 – Go to declaration
+
+Ctrl + O – Quick outline (methods in current class)
+
+Ctrl + E – Switch between open editors
+
+Alt + ← / → – Navigate backward/forward in history
+
+
+Ctrl + Space – Content assist / autocomplete
+
+Ctrl + Shift + F – Format code
+
+Alt + Shift + R – Rename variable/method/class
+
+Ctrl + D – Delete current line
+
+Ctrl + / – Toggle single-line comment
+
+Ctrl + Shift + / – Add block comment
+
+Ctrl + Shift + \ – Remove block comment
+
+
+
+
+oops Concept
+ 1. Class
+A class is a blueprint or template used to create objects. It defines properties (variables) and behaviors (methods) that the object will have.
+ 2. Object
+An object is an instance of a class. It represents a real-world entity and has a state (data) and behavior (functions).
+ 3. Encapsulation
+Encapsulation is the process of wrapping data and methods into a single unit. It helps to protect the data from unauthorized access by using access modifiers like private, public, etc.
+ 4. Inheritance
+Inheritance is the process by which one class acquires the properties and behaviors of another class. It promotes code reusability and establishes a relationship between classes.
+ 5. Polymorphism
+Polymorphism means "many forms." It allows one interface to be used for different data types or methods to perform different tasks based on the object or input.
+ 6. Abstraction
+Abstraction is the process of hiding the internal details and showing only the essential features. It helps in reducing complexity and improving code readability.
+ 7. Interface
+An interface is a collection of abstract methods that define a contract for what a class can do, without specifying how it should do it. It is used to achieve abstraction and multiple inheritance.
+
+Useful FileHandling Methods
+
+createNewFile()	Creates a new file
+exists()	Checks if the file exists
+getName()	Returns the name of the file
+getAbsolutePath()	Returns absolute path of the file
+canRead()	Checks if file is readable
+canWrite()	Checks if file is writable
+length()	Returns file size in bytes
+delete()	Deletes the file
+
+
+ Java Collections Framework – Notes 
+
+🔹 1. What is the Java Collections Framework (JCF)?
+The Java Collections Framework is a unified architecture for storing and manipulating groups of objects. It includes:
+
+Interfaces
+
+Classes
+
+Algorithms
+
+👉 Collections help in handling data structures like lists, sets, queues, and maps.
+
+🔹 2. Key Interfaces in Collections
+Interface	Description
+Collection	Root interface for all collections
+List	Ordered collection (can have duplicates)
+Set	Unordered collection (no duplicates)
+Queue	Ordered for processing elements (FIFO)
+Map	Key-value pairs (no duplicate keys)
+
+🔹 3. List Interface
+Definition: An ordered collection that allows duplicate elements.
+
+Explanation: Maintains insertion order. You can access elements using an index.
+
+🔹 4. Set Interface
+Definition: A collection that does not allow duplicate elements.
+
+Explanation: It models the mathematical set abstraction.
+
+🔹 5. Queue Interface
+Definition: A collection used to hold multiple elements prior to processing.
+
+Explanation: Usually follows FIFO (First In, First Out) order.
+
+🔹 6. Map Interface
+Definition: An object that maps keys to values.
+
+Explanation: Each key is unique, but values can be duplicated. Not a true Collection.
+
+🔹 7. Common Implementations
+Interface	Class	Description
+List	ArrayList	Resizable array, fast access
+LinkedList	Doubly linked list, faster insert/delete
+Set	HashSet	Unordered set, allows null, no duplicates
+LinkedHashSet	Maintains insertion order
+TreeSet	Sorted set, no nulls
+Queue	PriorityQueue	Orders elements using comparator
+Map	HashMap	Unordered key-value pairs
+LinkedHashMap	Maintains insertion order
+TreeMap	Sorted key-value pairs
+
+🔹 8. Iterator Interface
+Definition: Used to traverse elements in a collection.
+
+Explanation: Provides methods like hasNext() and next().
+
+🔹 9. Comparable vs Comparator
+Concept	Definition
+Comparable	Natural ordering, defines compareTo() inside class
+Comparator	Custom sorting logic, defines compare() externally
+
+🔹 10. Differences Between List, Set, and Map
+Feature	List	Set	Map
+Duplicates	Allowed	Not allowed	Keys: No, Values: Yes
+Order	Maintains	Not guaranteed	Keys sorted (TreeMap)
+Index Access	Yes	No	No
+
+🔹 11. Collections vs Collection
+Collection: Interface (List, Set, Queue)
+
+Collections: Utility class with static methods (like sort(), reverse())
+
+🔹 12. Benefits of Collections Framework
+Reduces programming effort
+
+
+Increases performance and reusability
+
+Provides consistent API
+
+Supports various data structures
+
+ Types of Cursors in Java
+
+1. Enumeration Cursor
+Introduced in: Java 1.0
+
+Used with: Legacy classes like Vector, Stack, Hashtable
+
+Methods:
+
+hasMoreElements()
+
+nextElement()
+
+Traversal Direction: Forward only
+
+Modification Allowed: ❌ No (read-only)
+
+Special Note: Can't be used to add or remove elements
+
+2. Iterator Cursor
+Introduced in: Java 1.2
+
+Used with: All collection classes (List, Set, Queue, etc.)
+
+Methods:
+
+hasNext()
+
+next()
+
+remove() – ✅ Safe removal during iteration
+
+Traversal Direction: Forward only
+
+Modification Allowed: ✅ Remove only
+
+Special Note: Universal cursor for collections
+
+3. ListIterator Cursor
+Introduced in: Java 1.2
+
+Used with: Only List implementations (ArrayList, LinkedList)
+
+Methods:
+
+All Iterator methods (hasNext(), next(), remove())
+
+Plus: hasPrevious(), previous(), add(), set()
+
+Traversal Direction: ✅ Forward and backward
+
+Modification Allowed: ✅ Add, remove, update
+
+Special Note: Most powerful cursor, but works only with Lists
+
+
+Primitive vs Wrapper Class Table
+Primitive Type	Wrapper Class
+byte	Byte
+short	Short
+int	Integer
+long	Long
+float	Float
+double	Double
+char	Character
+boolean	Boolean
+
+-----------------------------------------------2/7/2025---------------------------------------------
+
+ Map Interface (Java 1.2)
+Map is not a child of the Collection interface.
+
+It is a separate interface in the Java Collections Framework.
+
+Stores data in key-value pairs (each entry is a Map.Entry<K, V> object).
+
+Keys must be unique.
+
+Values can be duplicated.
+
+Only one null key is allowed (in HashMap), but multiple null values are allowed.
+
+Use .put(key, value) to add entries.
+
+All methods in the Map interface are abstract.
+
+Hashtable, HashMap, LinkedHashMap, TreeMap are major implementations.
+
+✅ How HashMap Works Internally
+Hashing the key:
+
+The key is passed through a hashing function (hashCode() method).
+
+Hashing converts the key to an integer hash.
+
+Calculate index:
+
+index = hashCode % arraySize
+
+Default arraySize in Java 8+ is 16 (can grow dynamically).
+
+The index points to a bucket (a slot in the internal array).
+
+Store entry in the bucket:
+
+If the bucket is empty, the entry is stored.
+
+If not, a collision is handled using a LinkedList or Balanced Tree.
+
+Hash collision:
+
+Occurs when two different keys have the same hash index.
+
+Java handles this using:
+
+Linked List (Java 7 and earlier)
+
+Balanced Tree / Red-Black Tree (Java 8+, when number of items > 8 in a bucket and array size ≥ 64)
+
+Retrieving (hashMap.get(key)):
+
+Hash the key → find index → search the bucket’s list/tree for the matching key → return value.
+
+✅ HashMap Constructors
+java
+Copy
+Edit
+HashMap();                              // default capacity 16
+HashMap(int initialCapacity);          // user-defined capacity
+HashMap(int initialCapacity, float loadFactor);  // capacity + threshold
+HashMap(Map<? extends K, ? extends V> m);         // copy from another map
+✅ LinkedHashMap
+Extends HashMap.
+
+Maintains insertion order using a doubly linked list internally.
+
+✅ SortedMap (Java 1.2)
+It is a child interface of Map.
+
+TreeMap is a concrete implementation.
+
+Maintains natural order (or custom using Comparator).
+
+✅ Entry Set Example Using Map
+java
+Copy
+Edit
+import java.util.*;
+
+public class EntrySetExample {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 10);
+        map.put("Banana", 20);
+        map.put("Mango", 15);
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " => " + entry.getValue());
+        }
+    }
+}
+✅ Lambda Expression in Java
+Introduced in Java 8, lambda expressions simplify code by reducing boilerplate.
+
+🔹 Syntax
+java
+Copy
+Edit
+(parameters) -> { body }
+🔹 Rules
+Can omit access modifiers, return type, and method name.
+
+For a single statement, {} and return are optional.
+
+🔹 Examples
+java
+Copy
+Edit
+// Example 1: No parameters
+Runnable r = () -> System.out.println("Running");
+
+// Example 2: Single parameter
+Consumer<String> c = str -> System.out.println(str);
+
+// Example 3: Multiple parameters
+BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+
+// Example 4: With return
+Function<String, Integer> strLength = str -> str.length();
+
+
+ Day 9--------------------------------------------------------------------------------------------
+🗓 Date: 3/7/2025
+
+🧠 Topic: Multitasking & Multithreading
+
+🔄 Multitasking
+1. Process-Based Multitasking
+Multiple programs run simultaneously.
+
+Example: OS running multiple applications like browser, music player, etc.
+
+2. Thread-Based Multitasking
+Multiple threads (independent parts) of the same program run simultaneously.
+
+More efficient than process-based multitasking.
+
+🧵 Multithreading in Java
+Multithreading allows multiple threads to run in parallel, sharing the same memory space.
+
+🔹 Two Ways to Create a Thread:
+By Extending the Thread Class
+
+class MyThread extends Thread {
+    public void run() {
+        // task code
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start(); // starts the thread
+    }
+}
+By Implementing the Runnable Interface
+
+
+class MyRunnable implements Runnable {
+    public void run() {
+        // task code
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
+⏱ Thread Scheduler
+Part of JVM that decides which thread to run next.
+
+Behavior may vary depending on OS and JVM.
+
+🛠 start() vs run() Method
+Method	Description
+start()	Registers the thread with the Thread Scheduler and calls run() internally.
+run()	Treated as a normal method if called directly (not as a thread). No new thread is created.
+
+⚠️ You cannot restart a thread once it has been started and completed.
+
+🎚 Thread Priorities
+Range: 1 to 10
+
+Thread.MIN_PRIORITY = 1
+
+Thread.NORM_PRIORITY = 5 (default)
+
+Thread.MAX_PRIORITY = 10
+
+🧵 Main Thread vs Child Thread
+The main thread is the entry point of the Java program.
+
+Additional threads created using Thread or Runnable are called child threads.
+
+🔁 Thread Life Cycle
+📌 States of a Thread:
+
+NEW --> RUNNABLE --> RUNNING --> TERMINATED
+          |            |            ^
+          v            v            |
+      BLOCKED    WAITING     TIMED_WAITING
+🔹 Description:
+State	Description
+NEW	Thread object is created, but not yet started.
+RUNNABLE	start() is called, thread is ready to run.
+RUNNING	CPU has selected the thread to run.
+BLOCKED	Thread is blocked, waiting to acquire a lock.
+WAITING	Thread waits indefinitely for another thread to perform a task.
+TIMED_WAITING	Thread waits for a specific period of time.
+TERMINATED	Thread completes execution or is stopped.
+
+Java Runnable Interface – Notes (Without Code)
+🔹 What is Runnable?
+Runnable is a functional interface in Java (from java.lang package).
+
+It is used to define a task that can be executed by a thread.
+
+It contains only one method: run().
+
+🔹 Why use Runnable?
+To create threads without extending the Thread class.
+
+Allows your class to extend another class (since Java supports only single inheritance).
+
+Helps to separate task logic from thread execution.
+
+🔹 How Runnable works:
+You define a task by implementing the Runnable interface.
+
+This task is then passed to a Thread object.
+
+The thread is started to execute the task in parallel.
+
+🔹 Key Benefits:
+Better flexibility than using Thread directly.
+
+Encourages code reuse and separation of concerns.
+
+Compatible with lambda expressions in Java 8 and above.
+
+🔹 Runnable vs Thread
+Feature	Runnable	Thread
+Inheritance	Implements interface	Extends Thread class
+Flexibility	More (can extend other classes)	Less (single inheritance)
+Use case	Defines task logic	Handles thread execution & task
+Reusability	Can reuse same Runnable object	Less reusable
+
+🔹 Notes:
+You must call the start() method on a Thread object to run a Runnable task.
+
+Directly calling run() does not start a new thread — it just runs in the current thread.
+
+Useful in applications where you want to run multiple tasks in parallel.
+
+ What is a Thread?
+A thread is the smallest unit of execution in a program.
+
+Java supports multithreading, allowing multiple threads to run concurrently.
+
+🔹 Benefits of Multithreading
+Efficient use of CPU resources.
+
+Enables parallelism (e.g., playing music while downloading files).
+
+Improves application performance and responsiveness.
+
+🔹 Thread Lifecycle
+New – Thread is created.
+
+Runnable – Thread is ready to run.
+
+Running – Thread is currently executing.
+
+Blocked/Waiting – Thread is paused for a reason (e.g., waiting for a resource).
+
+Terminated – Thread has finished execution.
+
+🔹 Ways to Create Threads
+Extending Thread class
+
+Implementing Runnable interface
+
+Using Callable with ExecutorService (for tasks that return results)
+
+🔹 Important Thread Methods
+start() – Starts thread execution.
+
+run() – Contains the thread’s task.
+
+sleep(ms) – Pauses thread for given milliseconds.
+
+join() – Waits for another thread to finish.
+
+interrupt() – Interrupts a sleeping or waiting thread.
+
+🔹 Thread Priorities
+Threads can be given priority (1 to 10).
+
+Thread.MIN_PRIORITY, NORM_PRIORITY, and MAX_PRIORITY.
+
+🔹 Thread Safety
+Ensure correct behavior in concurrent access to shared resources.
+
+Use synchronized blocks/methods, locks, or concurrent classes.
+-----------------------------------------------------------------------------------------------------
+ yield()
+A method from the Thread class.
+
+Hints the thread scheduler to pause the current thread and give a chance to other threads of the same or higher priority.
+
+Does not guarantee the thread will pause.
+
+🔹 sleep()
+Also from the Thread class.
+
+Pauses the execution of the current thread for a specified time.
+
+The thread goes into a timed waiting state.
+
+Requires handling an InterruptedException.
+
+🔹 wait()
+A method from the Object class.
+
+Causes the current thread to wait until another thread calls notify() or notifyAll() on the same object.
+
+Used for inter-thread communication.
+
+Must be called from within a synchronized block.
+
+🔹 notify()
+Wakes up one waiting thread that is waiting on the object.
+
+The thread will continue only after the current thread releases the lock.
+
+Must be called inside a synchronized block.
+
+🔹 notifyAll()
+Wakes up all threads waiting on the object.
+
+Only one thread gets the lock and continues execution.
+
+Also must be called within a synchronized block.
+
+🔹 Daemon Thread
+A background thread that supports user threads (e.g., garbage collector).
+
+It runs in the background and ends when all user (non-daemon) threads finish.
+
+Must be marked as a daemon before starting the thread.
+--------------------------------------------------------------------------------------------------
+JDBC Connectivity Notes
+🔸 What is JDBC?
+JDBC (Java Database Connectivity) is an API in Java that allows Java programs to connect and interact with relational databases like MySQL, PostgreSQL, Oracle, etc.
+
+🔸 Steps in JDBC Connectivity
+1. Import JDBC Packages
+
+import java.sql.*;
+2. Load and Register the Driver
+For example, for PostgreSQL:
+
+Class.forName("org.postgresql.Driver");
+For MySQL: "com.mysql.cj.jdbc.Driver"
+
+3. Establish the Connection
+
+Connection con = DriverManager.getConnection(
+    "jdbc:postgresql://localhost:5432/your_database",
+    "your_username",
+    "your_password"
+);
+4. Create a Statement / PreparedStatement
+
+Statement stmt = con.createStatement();
+// OR
+PreparedStatement pstmt = con.prepareStatement("INSERT INTO table_name VALUES (?, ?)");
+5. Execute the Query
+
+// For SELECT
+ResultSet rs = stmt.executeQuery("SELECT * FROM table_name");
+
+// For INSERT/UPDATE/DELETE
+int rowsAffected = stmt.executeUpdate("UPDATE table_name SET column='value' WHERE condition");
+6. Process the Results
+
+while(rs.next()) {
+    System.out.println(rs.getString("column_name"));
+}
+7. Close the Resources
+
+rs.close();
+stmt.close();
+con.close();
+🔸 Common JDBC Interfaces
+Interface	Description
+DriverManager	Manages the list of database drivers.
+Connection	Represents the connection to the DB.
+Statement	Used to execute static SQL queries.
+PreparedStatement	Used for parameterized queries.
+ResultSet	Stores the result returned by SELECT.
+
+🔸 Example Code: SELECT Query (PostgreSQL)
+
+import java.sql.*;
+
+public class JdbcExample {
+    public static void main(String[] args) {
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection con = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/mydb", "postgres", "password");
+
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+
+            while(rs.next()) {
+                System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+            }
+
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+🔸 Useful Tips
+Use PreparedStatement instead of Statement to avoid SQL injection.
+
+Always close connections in the finally block or use try-with-resources.
+
+Use proper exception handling (SQLException, ClassNotFoundException).
+------------------------------------------------------------------------------------------------------
+ JDBC Core Concepts Notes
+🔹 1. DriverManager.getConnection() - Overloaded Methods
+The DriverManager class provides three overloaded methods to establish a database connection:
+
+Method 1: Takes only the database URL.
+
+Method 2: Takes the database URL along with a username and password.
+
+Method 3: Takes the database URL and a Properties object (which contains username, password, and other optional settings).
+
+🔹 2. Types of SQL Queries
+Select Query
+
+Used to retrieve data from the database.
+
+Returns a ResultSet object.
+
+Other Queries (Insert, Update, Delete)
+
+Used to modify data.
+
+Return an integer value representing the number of rows affected.
+
+🔹 3. Static vs. Dynamic Queries
+Static Query
+
+The query is hard-coded with values directly in the SQL string.
+
+Example: WHERE id = 1
+
+Executed using the Statement interface.
+
+Dynamic Query
+
+The query uses placeholders (?) for values, which are set at runtime.
+
+Example: WHERE id = ?
+
+Executed using the PreparedStatement interface.
+
+🔹 4. Statement Interfaces
+To send SQL queries to the database, we use:
+
+Statement
+
+Used for static queries.
+
+Not secure against SQL injection.
+
+PreparedStatement
+
+Used for dynamic queries.
+
+More secure and faster for repeated executions.
+
+Prevents SQL injection by setting values using methods like setInt, setString, etc.
+
+🔹 5. Query Execution Methods
+Once a Statement or PreparedStatement is created from a Connection, queries are executed using:
+
+executeQuery()
+
+Used for SELECT statements.
+
+Returns a ResultSet containing the data.
+
+executeUpdate()
+
+Used for INSERT, UPDATE, or DELETE statements.
+
+Returns an int representing how many rows were affected.
+
+🔹 6. Properties File (For Database Configurations)
+A .properties file can be used to store database connection details such as:
+
+URL
+
+Username
+
+Password
+
+This improves security and makes the application easier to maintain by avoiding hard-coded credentials in Java files.
+
+

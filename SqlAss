@@ -1,0 +1,56 @@
+mysql> CREATE TABLE employee (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(100),
+    ->     salary DECIMAL(10, 2),
+    ->     phone_number VARCHAR(15),
+    ->     age INT CHECK (age > 18),
+    ->     passport_number VARCHAR(20),
+    ->     gender ENUM('Male', 'Female', 'Other'),
+    ->     email_id VARCHAR(100),
+    ->     adharnum VARCHAR(20),
+    ->     blood_group VARCHAR(5),
+    ->     emergency_contact_number VARCHAR(15),
+    ->     fathers_name VARCHAR(100),
+    ->     place VARCHAR(100),
+    ->     address TEXT,
+    ->     city VARCHAR(50),
+    ->     pincode VARCHAR(10),
+    ->     date_of_joining DATE,
+    ->     marriage_status BOOLEAN
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO employee (
+    ->     id, name, salary, phone_number, age, passport_number, gender,
+    ->     email_id, adharnum, blood_group, emergency_contact_number,
+    ->     fathers_name, place, address, city, pincode, date_of_joining, marriage_status
+    -> ) VALUES (
+    ->     1, 'Akshay N R', 55000.00, '9876543210', 22, 'P1234567', 'Male',
+    ->     'akshay@example.com', '1234-5678-9012', 'O+', '9988776655',
+    ->     'Ravikumar', 'Bangalore', '123, Main Road, Vijayanagar', 'Bangalore', '560040', '2024-06-15', 0
+    -> );
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql> INSERT INTO employee (
+    ->     id, name, salary, phone_number, age, passport_number, gender,
+    ->     email_id, adharnum, blood_group, emergency_contact_number,
+    ->     fathers_name, place, address, city, pincode, date_of_joining, marriage_status
+    -> ) VALUES (
+    ->     2, 'Ravi Kumar', 62000.00, '9876501234', 28, 'P8765432', 'Male',
+    ->     'ravi.kumar@example.com', '5678-9012-3456', 'O+', '9876543211',
+    ->     ' Kumar', 'Mysore', '456, Gandhi Circle', 'Mysore', '570001', '2023-11-01', 1
+    -> );
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from employee
+    -> select*from employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select*from employee' at line 2
+mysql> select*from employee;
++----+------------+----------+--------------+------+-----------------+--------+------------------------+----------------+-------------+--------------------------+--------------+-----------+-----------------------------+-----------+---------+-----------------+-----------------+
+| id | name       | salary   | phone_number | age  | passport_number | gender | email_id               | adharnum       | blood_group | emergency_contact_number | fathers_name | place     | address                     | city      | pincode | date_of_joining | marriage_status |
++----+------------+----------+--------------+------+-----------------+--------+------------------------+----------------+-------------+--------------------------+--------------+-----------+-----------------------------+-----------+---------+-----------------+-----------------+
+|  1 | Akshay N R | 55000.00 | 9876543210   |   22 | P1234567        | Male   | akshay@example.com     | 1234-5678-9012 | B+          | 9988776655               | Ravi kumar   | Bangalore | 123, Main Road, Vijayanagar | Bangalore | 560040  | 2024-06-15      |               0 |
+|  2 | Ravi Kumar | 62000.00 | 9876501234   |   28 | P8765432        | Male   | ravi.kumar@example.com | 5678-9012-3456 | O+          | 9876543211               |  Kumar       | Mysore    | 456, Gandhi Circle          | Mysore    | 570001  | 2023-11-01      |               1 |
++----+------------+----------+--------------+------+-----------------+--------+------------------------+----------------+-------------+--------------------------+--------------+-----------+-----------------------------+-----------+---------+-----------------+-----------------+
+2 rows in set (0.00 sec)
