@@ -841,4 +841,28 @@ Password
 
 This improves security and makes the application easier to maintain by avoiding hard-coded credentials in Java files.
 
+---------------------------------------------------------------------------------------------------------
+Collections
+In-memory storage: Collections (like List, Set, Map) store data in memory (RAM) during program execution.
+
+Temporary data: Data is lost once the program stops.
+
+Faster operations: Access and modification of data are generally fast because they happen in memory.
+
+No persistence: Cannot permanently store data; used mainly for data manipulation during runtime.
+
+Used when: You need to manage data temporarily within the application.
+
+JDBC (Java Database Connectivity)
+Persistent storage: JDBC allows Java programs to connect with a database (like MySQL, PostgreSQL) to store data permanently.
+
+Database interaction: Performs CRUD operations (Create, Read, Update, Delete) on database tables.
+
+Slower than memory: Slightly slower due to network and disk access, but ensures data persistence.
+
+Data is saved: Data remains in the database even after the program ends.
+
+Used when: You need to store, retrieve, or manipulate data permanently.
+
+
 
