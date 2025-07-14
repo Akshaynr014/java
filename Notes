@@ -864,5 +864,89 @@ Data is saved: Data remains in the database even after the program ends.
 
 Used when: You need to store, retrieve, or manipulate data permanently.
 
+-----------------------------------------------------------------------------------------------------
+
+1. Creating a Maven Project
+Use Maven Archetype Quickstart to create a basic Java project.
+
+Set artifactId as the project name.
+
+Command (if using terminal):
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=myproject -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+✅ 2. Adding MySQL Connector Dependency
+Visit: https://mvnrepository.com
+
+Search: MySQL Connector
+
+Choose the latest (8.x) version.
+
+Copy the <dependency> tag and paste it inside pom.xml to download the JAR.
+
+✅ 3. Updating Java Version in Maven
+In pom.xml, update plugin to use Java 21:
+
+<properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+</properties>
+✅ 4. Web Resources
+There are two types:
+
+1. Static Web Resources
+Content does not change.
+
+Examples: HTML, CSS, JS, images
+
+Same response for every request.
+
+2. Dynamic Web Resources
+Content is generated based on user input or server logic.
+
+Examples: Servlet, JSP
+
+Different response for different users or actions.
+
+✅ 5. Static Web Application
+Built using only static resources (HTML, CSS).
+
+No server-side logic.
+
+Example: Portfolio site
+
+✅ 6. Dynamic Web Application
+Uses Servlets, JSP, or JPA.
+
+Content changes dynamically based on request.
+
+Example: Login page, shopping cart.
+
+✅ 7. Web Browser ↔ Web Server
+Web browser sends request (like Chrome).
+
+Web server (like Tomcat) handles request and sends back response.
+
+Web Application runs inside the server (Java-based logic).
+
+✅ 8. Tomcat Server
+An open-source Java web server and Servlet container.
+
+Used to run Java web applications (WAR files).
+
+Default port: 8080
+
+✅ 9. 3 Ways to Access Web Applications
+Browsing – Typing the URL directly
+
+Clicking hyperlinks – Navigating through links
+
+Submitting forms – Sending user data to the server
+
+✅ 10. Creating a Maven Web Project
+Use Maven archetype for web apps:
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=mywebapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+Creates structure for a web application (web.xml, index.jsp in webapp/)
+
 
 
