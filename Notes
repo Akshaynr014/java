@@ -948,5 +948,41 @@ Use Maven archetype for web apps:
 mvn archetype:generate -DgroupId=com.example -DartifactId=mywebapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 Creates structure for a web application (web.xml, index.jsp in webapp/)
 
+------------------------------------------------------------------------------------------------------
+ What is a Servlet?
+A Servlet is a Java class that handles HTTP requests and responses in a web application. It runs on the server side inside a Servlet container (like Apache Tomcat).
 
+Think of a servlet as a Java program that responds to requests from a browser (e.g., /login, /register).
+
+🔹 Why Use Servlets?
+To create dynamic web content.
+
+To handle form submissions, process logic, and generate responses (like HTML).
+
+It's the foundation of modern web frameworks (like Spring MVC).
+
+🔹 Servlet Life Cycle
+The Servlet life cycle is managed by the Servlet container (e.g., Tomcat).
+
+Loading: Servlet class is loaded.
+
+Instantiation: An object is created.
+
+Initialization: init() method is called once.
+
+Request Handling:
+
+service() method is called for every request.
+
+Usually overridden as doGet() or doPost() based on request type.
+
+Destruction: destroy() method is called when the servlet is taken out of service.
+
+🔹 Key Servlet Methods
+Method	Purpose
+init()	Called once when the servlet is first created.
+doGet()	Handles GET requests (e.g., typing a URL).
+doPost()	Handles POST requests (e.g., submitting a form).
+destroy()	Called once before the servlet is destroyed.
+service()	Called by the container to handle requests. Usually overridden by doGet()/doPost().
 
