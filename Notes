@@ -985,4 +985,107 @@ doGet()	Handles GET requests (e.g., typing a URL).
 doPost()	Handles POST requests (e.g., submitting a form).
 destroy()	Called once before the servlet is destroyed.
 service()	Called by the container to handle requests. Usually overridden by doGet()/doPost().
+-------------------------------------------------------------------------------------------------------
+Servlets in J2EE
+Servlets are part of the Java EE API.
+
+They handle requests from web browsers via a web server.
+
+Mainly used to create dynamic web applications.
+
+📦 WAR File (Web Application Archive)
+A WAR file packages all components of a Java web application:
+
+Servlets
+
+JSPs
+
+HTML, CSS, JavaScript
+
+Libraries (JARs)
+
+It is deployed to a Java EE-compatible web server or application server (e.g., Tomcat, JBoss, GlassFish).
+
+WAR file is placed inside the webapps/ folder of the Tomcat server for deployment.
+
+🚀 Deploying a WAR File in Tomcat
+Copy the .war file into the webapps/ directory of Tomcat.
+
+Tomcat automatically detects and deploys it.
+
+Access the application using a web URL in a browser.
+
+🌐 Web URL Structure
+bash
+Copy
+Edit
+protocol://domain:port/path?queryString#fragmentID
+Protocol: Communication standard (e.g., http, https)
+
+Domain: Unique name identifying a computer/server on the network
+
+Port: Identifies the specific web server application
+
+Path: Combines web application name and web resource location
+
+Query String: Key-value pair used to send data to dynamic resources like servlets/JSPs
+
+Fragment ID: Refers to a specific section of a web page
+
+🔐 Protocols Used in Web Communication
+HTTP (HyperText Transfer Protocol)
+
+Default port: 8080
+
+Used for regular web communication
+
+HTTPS (Secure HTTP)
+
+Default port: 8443
+
+Encrypts communication for secure data transfer
+
+📥 Key Elements of Request and Response
+HTTP Request
+Web URL
+
+Form data (from input fields)
+
+HTTP methods
+
+Cookies (optional)
+
+HTTP Response
+Status code (e.g., 200, 404, 500)
+
+Actual content (HTML, JSON, etc.)
+
+Cookies
+
+📡 Common HTTP Methods
+GET – Retrieves data from server
+
+POST – Sends data to server
+
+PUT – Updates existing resource
+
+DELETE – Removes resource
+
+HEAD – Similar to GET, but without body
+
+OPTIONS – Returns allowed methods
+
+TRACE – Used for debugging
+
+CONNECT – Establishes a tunnel for SSL communication
+
+🔔 Note: HTTP methods should always be written in UPPERCASE.
+
+✅ HTTP Status Codes
+200 – OK (request handled successfully)
+
+404 – Not Found (resource does not exist)
+
+500 – Internal Server Error (server-side issue)
+
 
