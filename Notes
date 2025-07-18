@@ -1088,4 +1088,151 @@ CONNECT – Establishes a tunnel for SSL communication
 
 500 – Internal Server Error (server-side issue)
 
+---------------------------------------------------------------------------------------------------
+ Servlet Life Cycle
+Instantiation
 
+Servlet object is created by the container.
+
+Initialization (init())
+
+Called once after instantiation.
+
+Initializes servlet with config info.
+
+Service (service())
+
+Called for each client request.
+
+Handles GET, POST, etc.
+
+Destroy (destroy())
+
+Called once before servlet is removed.
+
+Used for cleanup (e.g., closing connections).
+
+🌐 Web Handling in Servlet
+@WebServlet("/")
+Used to map a servlet directly using annotation (alternative to web.xml).
+
+🍪 Cookies and Sessions
+1. Cookies
+Stored on client browser.
+
+Key-value pairs.
+
+Used for storing small data like username, last visit.
+
+2. Session
+Stored on server.
+
+HttpSession object tracks user session.
+
+More secure than cookies.
+
+🔀 Request Dispatching
+1. Forward
+Internal transfer to another resource.
+
+URL doesn't change.
+
+request.getRequestDispatcher("target.jsp").forward(request, response);
+
+2. Redirect
+Client is redirected to a new URL.
+
+URL changes.
+
+response.sendRedirect("target.jsp");
+
+🧪 Assessment Use Case – Employee Management
+🏠 Home Page
+Options:
+
+Add Employee
+
+Search by ID
+
+Delete by ID
+
+Update
+
+List All Employees
+
+➕ Add Employee Flow
+Click Add Employee → Redirects to addEmployee.jsp.
+
+Submit form → Servlet handles request.
+
+Data is saved to Database (using JDBC or JPA).
+
+📝 JSP (Java Server Pages)
+If using a .jsp file, map it in web.xml instead of a servlet class.
+
+📌 Types of JSP Tags
+Type	Syntax	Description
+Expression	<%= expression %>	Outputs result directly into HTML
+Scriptlet	<% Java code %>	Embed Java code inside JSP
+Directive	<%@ directive attribute="value" %>	Page-level instructions (e.g., imports)
+Declaration	<%! Java method or variable declaration %>	Declares class-level variables or methods
+Action	<jsp:action ... />	XML-based tags (e.g., include, forward)
+
+🧱 Frameworks Overview
+🔹 What is a Framework?
+An abstract layer that simplifies and structures application development.
+
+🔹 Examples:
+JDBC → Low-level DB access
+
+Hibernate → ORM framework built over JDBC
+
+Spring → Full-stack framework for building enterprise apps
+
+🛠️ JPA with Hibernate
+❌ Drawbacks of JDBC
+Manual query writing.
+
+No object mapping (have to convert text to object).
+
+No database relationship mapping support.
+
+✅ Why ORM (Hibernate)?
+Acts as a bridge between Java and DB.
+
+Supports object-relational mapping (ORM).
+
+Automatically maps Java objects to DB tables.
+
+🔄 JPA with Hibernate
+JPA (Java Persistence API): Specification that defines ORM rules.
+
+Hibernate: Implementation of JPA.
+
+🧩 Key Features:
+Bi-directional mapping.
+
+Entity relationships (One-to-One, One-to-Many, etc.).
+
+Uses annotations like @Entity, @Id, @OneToMany, etc.
+
+🧍‍♂️ Employee Example – Mapping Structure
+📦 Entities:
+EmployeeInfo (Primary Entity)
+
+PrimaryInfo (One-to-One with Employee)
+
+SecondaryInfo (One-to-One or optional)
+
+EmployeeAddress (One-to-Many – One employee can have many addresses)
+
+🔑 Primary Key:
+Employee ID (used as primary key in EmployeeInfo)
+
+Used to map related entities using annotations:
+
+java
+Copy
+Edit
+@OneToMany(mappedBy="employee")
+private List<EmployeeAddress> addresses;
