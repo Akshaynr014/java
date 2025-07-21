@@ -1,0 +1,58 @@
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee" version="5.0">
+
+    <servlet>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <servlet-class>com.employeeApp.controller.AddEmployeeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <url-pattern>/AddEmployeeServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+    <servlet-name>SearchEmployeeServlet</servlet-name>
+    <servlet-class>com.employeeApp.controller.SearchEmployeeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SearchEmployeeServlet</servlet-name>
+    <url-pattern>/SearchEmployeeServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>DeleteEmployeeServlet</servlet-name>
+    <servlet-class>com.employeeApp.controller.DeleteEmployeeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteEmployeeServlet</servlet-name>
+    <url-pattern>/DeleteEmployeeServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>FetchEmployeeForUpdateServlet</servlet-name>
+    <servlet-class>com.employeeApp.controller.FetchEmployeeForUpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>FetchEmployeeForUpdateServlet</servlet-name>
+    <url-pattern>/FetchEmployeeForUpdateServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <servlet-class>com.employeeApp.controller.UpdateEmployeeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <url-pattern>/UpdateEmployeeServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ListEmployeesServlet</servlet-name>
+    <servlet-class>com.employeeApp.controller.ListEmployeesServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ListEmployeesServlet</servlet-name>
+    <url-pattern>/list</url-pattern>
+</servlet-mapping>
+
+</web-app>
