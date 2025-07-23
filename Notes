@@ -1236,3 +1236,86 @@ Copy
 Edit
 @OneToMany(mappedBy="employee")
 private List<EmployeeAddress> addresses;
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ What is JPA (Java Persistence API)?
+A Java specification for object-relational mapping (ORM).
+
+Used to map Java objects to database tables.
+
+It’s only an interface/specification—requires a provider (implementation) like Hibernate.
+
+🔧 What is Hibernate?
+A popular implementation of JPA.
+
+Handles all low-level JDBC operations internally.
+
+Provides additional features beyond JPA.
+
+🧱 Core JPA Concepts (Basics)
+1. Entity
+A Java class that represents a database table.
+
+Annotated with @Entity and mapped to a table.
+
+2. Primary Key
+Every entity must have a primary key.
+
+Use @Id annotation to mark it.
+
+Use @GeneratedValue for auto-incrementing keys.
+
+3. Persistence Unit
+Defined in persistence.xml file.
+
+Contains configuration like:
+
+Database URL
+
+Dialect
+
+JDBC driver
+
+Entity class names
+
+Provider (e.g., org.hibernate.jpa.HibernatePersistenceProvider)
+
+4. EntityManager
+Main interface for interacting with the persistence context.
+
+Responsible for CRUD operations, transactions, and queries.
+
+5. EntityManagerFactory
+Used to create EntityManager instances.
+
+Created only once per application.
+
+6. Persistence Context
+A memory area where managed entities are stored.
+
+Ensures entity uniqueness within a transaction.
+
+🛠️ JPA Operations (CRUD)
+- Create → persist(entity)
+- Read → find(), getReference()
+- Update → merge(entity)
+- Delete → remove(entity)
+📦 JPA Lifecycle States
+New/Transient → Object not in DB or context
+
+Managed → Object tracked by EntityManager
+
+Detached → No longer managed
+
+Removed → Marked for deletion
+
+🗃️ JPQL (Java Persistence Query Language)
+Object-oriented query language.
+
+Similar to SQL but works with entities and fields, not tables and columns.
+
+Examples: SELECT e FROM Employee e WHERE e.name = 'Akshay'
+
+🔄 Transactions
+Required for making changes in DB.
+
+Use EntityTransaction to begin, commit, and rollback.
