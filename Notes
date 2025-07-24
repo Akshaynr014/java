@@ -1319,3 +1319,57 @@ Examples: SELECT e FROM Employee e WHERE e.name = 'Akshay'
 Required for making changes in DB.
 
 Use EntityTransaction to begin, commit, and rollback.
+------------------------------------------------------------------------------------------------------------------------
+JPA & Hibernate Associations
+Associations define relationships between entities (tables). JPA and Hibernate use annotations to map these relationships.
+
+1. One-to-One
+Definition: Each entity instance is associated with only one instance of another entity.
+
+Example: A User has one Profile.
+
+Mapped Using: @OneToOne
+
+Cascade & Fetching: Often used with cascade and fetch types.
+
+2. One-to-Many
+Definition: One entity is associated with multiple instances of another entity.
+
+Example: A Department has many Employees.
+
+Mapped Using: @OneToMany (with mappedBy in the owning entity)
+
+3. Many-to-One
+Definition: Many instances of one entity are associated with one instance of another.
+
+Example: Many Employees belong to one Department.
+
+Mapped Using: @ManyToOne
+
+4. Many-to-Many
+Definition: Multiple instances of one entity are associated with multiple instances of another.
+
+Example: A Student can enroll in many Courses, and a Course can have many Students.
+
+Mapped Using: @ManyToMany
+
+Join Table: Requires a separate join table to manage relationships.
+
+🔄 Cascade Types
+Control how operations (like persist, merge, remove) are cascaded to related entities.
+Common types:
+
+PERSIST
+
+MERGE
+
+REMOVE
+
+ALL
+
+⚡ Fetch Types
+Define when related entities are loaded:
+
+LAZY: Loaded only when accessed.
+
+EAGER: Loaded immediately with the parent.
