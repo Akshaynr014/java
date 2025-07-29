@@ -1373,3 +1373,87 @@ Define when related entities are loaded:
 LAZY: Loaded only when accessed.
 
 EAGER: Loaded immediately with the parent.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Inversion of Control (IoC) in Spring
+IoC is a design principle where the control of object creation and wiring is given to the Spring container.
+
+In Spring, IoC is implemented using Dependency Injection (DI).
+
+🔄 What does “IoC Container manages objects” mean?
+The container is responsible for:
+
+Instantiating the object (creating the bean)
+
+Configuring the object (setting values, injecting dependencies)
+
+Assembling the object (wiring dependencies together)
+
+⚙️ Ways to Configure the IoC Container
+XML-based Configuration
+
+Annotation-based Configuration
+
+Java-based Configuration Class
+
+🧠 Types of IoC Containers in Spring
+BeanFactory
+
+Lightweight
+
+Loads beans lazily
+
+Basic container
+
+ApplicationContext
+
+More powerful and feature-rich
+
+Loads beans eagerly
+
+Preferred in most Spring applications
+
+🤝 Dependency Injection (DI)
+IoC is also known as Dependency Injection — where objects get their dependencies injected rather than creating them manually.
+
+🔌 Types of Dependency Injection in Spring
+Constructor Injection
+
+Setter Injection
+
+Factory Method Injection (arguments passed to factory methods)
+
+📦 Java Bean in Spring
+A class is considered a valid Java Bean if it:
+
+Is a concrete class (not abstract/interface)
+
+Has private data members
+
+Provides public getters and setters
+
+Does not contain business logic
+
+Implements Serializable (optional but common)
+
+🧠 Spring Beans
+Beans are objects managed by the Spring IoC container
+
+These beans form the backbone of your application
+
+📐 Bean Scopes in Spring
+Scope	Description
+singleton	One instance per Spring container (default)
+prototype	A new instance each time it is requested
+request	One bean per HTTP request (web only)
+session	One bean per HTTP session (web only)
+application	One bean per ServletContext
+
+To set the scope in XML:
+scope="prototype" inside the <bean> tag
+
+🧩 Has-A Relationship in Spring
+A Has-A relationship represents composition.
+
+Example: A Car has-a Discount object.
+
+In Spring, this is managed through Dependency Injection (Spring wires these objects together automatically).
