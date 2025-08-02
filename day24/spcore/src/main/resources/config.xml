@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Vehicle Bean with Setter Injection -->
+	<bean id="myvehicle" class="com.dyashin.spcore.Car"
+		scope="prototype">
+		<property name="discountsirdiscount"
+			ref="discountsirdiscount" />
+	</bean>
+
+	<!-- method interface -->
+	<bean id="employee"
+		class="com.dyashin.spcore.EmployeInterfaceMethod">
+		<!-- <constructor-arg value="akshay" /> <constructor-arg value="21" /> -->
+		<property name="name" value="emp" />
+		<property name="age" value="21" />
+	</bean>
+
+	<!-- method xml -->
+	<bean id="Bean" class="com.dyashin.spcore.EmployeeXmlMethod"
+		init-method="init" destroy-method="destroy">
+		<property name="name" value="virat" />
+		<property name="age" value="36" />
+	</bean>
+
+	<!-- Discount Bean -->
+	<bean id="discountsirdiscount"
+		class="com.dyashin.spcore.FestivalDiscount" />
+
+
+	<!-- Component Scan -->
+	<context:component-scan
+		base-package="com.dyashin.annotation" />
+<!--  
+<bean id="bike" class="com.dyashin.annotation.Bike" autowire="byName"></bean>
+<bean id="engine" class="com.dyashin.annotation.Engine"></bean>-->
+</beans>
