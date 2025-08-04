@@ -2,7 +2,7 @@ package controller;
 
 import model.Song;
 import service.SongService;
-import exception.SongNotFoundException;
+import exception.SongNotEoundException;
 
 import java.util.List;
 import java.util.Scanner;
